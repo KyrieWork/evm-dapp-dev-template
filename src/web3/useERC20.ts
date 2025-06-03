@@ -1,12 +1,13 @@
 import { type Address, type WalletClient, formatUnits, getContract } from 'viem';
 import { logError } from '@/utils';
 import { ABI_ERC20 } from './abis';
-import { useChainId } from 'wagmi';
+import { useChainId, useWalletClient } from 'wagmi';
 import { getPublicClientForChain } from './client';
 
 export const useERC20 = (walletClient?: WalletClient) => {
   const chainId = useChainId();
   const client = getPublicClientForChain(chainId);
+  const { data: connectedClient } = useWalletClient();
 
   const tokenContract = async (token: Address) => {
     return getContract({
@@ -20,7 +21,7 @@ export const useERC20 = (walletClient?: WalletClient) => {
     return getContract({
       address: token,
       abi: ABI_ERC20,
-      client: walletClient!,
+      client: walletClient || connectedClient!,
     });
   };
 
