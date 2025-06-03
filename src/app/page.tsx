@@ -1,3 +1,4 @@
+import { ToastExample } from '@/components/examples/ToastExample';
 import { Header } from '@/components/Header';
 
 export default function Home() {
@@ -8,6 +9,9 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <section className="flex justify-center gap-8 space-y-8 rounded-lg bg-white p-6 shadow-md">
             <div>Content</div>
+            <div>
+              <ToastExample />
+            </div>
           </section>
         </div>
       </main>
