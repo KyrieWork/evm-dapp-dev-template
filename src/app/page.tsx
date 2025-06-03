@@ -1,3 +1,4 @@
+import { ApiExample } from '@/components/examples/ApiExample';
 import { ToastExample } from '@/components/examples/ToastExample';
 import { Header } from '@/components/Header';
 
@@ -10,6 +11,7 @@ export default function Home() {
           <section className="flex justify-center gap-8 space-y-8 rounded-lg bg-white p-6 shadow-md">
             <div>Content</div>
             <div>
+              <ApiExample />
               <ToastExample />
             </div>
           </section>
