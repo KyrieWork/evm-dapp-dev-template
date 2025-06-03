@@ -16,6 +16,18 @@ if (!projectId) {
 
 export const networks = [mainnet, arbitrum] as [AppKitNetwork, ...AppKitNetwork[]];
 
+// 支持的链ID列表
+export const SUPPORTED_CHAIN_IDS = networks.map(network => Number(network.id));
+
+/**
+ * 检查是否为支持的链
+ * @param chainId 链ID
+ * @returns 是否支持该链
+ */
+export const isSupportedChain = (chainId: number): boolean => {
+  return networks.map(network => Number(network.id)).includes(chainId);
+};
+
 //Set up the Wagmi Adapter (Config)
 export const wagmiAdapter = new WagmiAdapter({
   storage: createStorage({

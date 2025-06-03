@@ -1,6 +1,9 @@
 export * from './error';
 export * from './log';
 export * from './text';
+export * from './api';
+export * from './callback';
+export * from './http';
 
 /**
  * 调用方法重试

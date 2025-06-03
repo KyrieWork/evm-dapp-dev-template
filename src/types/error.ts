@@ -9,3 +9,11 @@ export interface TransactionError {
   name?: string;
   code?: number;
 }
+
+// API错误类型
+export interface ApiError {
+  message: string;
+  status?: number;
+  statusText?: string;
+  data?: any;
+}
