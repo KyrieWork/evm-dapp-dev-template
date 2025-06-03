@@ -1,5 +1,6 @@
 import { createPublicClient, http } from 'viem';
-import { bsc, localhost } from '@reown/appkit/networks';
+import { bsc, localhost, mainnet } from '@reown/appkit/networks';
+import { logError } from '@/utils';
 
 export const getPublicClientForChain = (chainId: number) => {
   switch (chainId) {
@@ -14,6 +15,6 @@ export const getPublicClientForChain = (chainId: number) => {
         transport: http(process.env.NEXT_PUBLIC_BSC_RPC_URL || 'https://bsc-dataseed.binance.org'),
       });
     default:
-      throw new Error(`Unsupported chainId: ${chainId}`);
+      return null;
   }
 };

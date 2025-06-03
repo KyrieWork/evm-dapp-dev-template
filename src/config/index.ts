@@ -1,6 +1,6 @@
 import { cookieStorage, createStorage } from 'wagmi';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
-import { mainnet, arbitrum } from '@reown/appkit/networks';
+import { mainnet, bsc } from '@reown/appkit/networks';
 import type { AppKitNetwork } from '@reown/appkit/networks';
 
 export const websiteConfig = {
@@ -14,7 +14,7 @@ if (!projectId) {
   throw new Error('Project ID is not defined');
 }
 
-export const networks = [mainnet, arbitrum] as [AppKitNetwork, ...AppKitNetwork[]];
+export const networks = [mainnet, bsc] as [AppKitNetwork, ...AppKitNetwork[]];
 
 // 支持的链ID列表
 export const SUPPORTED_CHAIN_IDS = networks.map(network => Number(network.id));

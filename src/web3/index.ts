@@ -1,3 +1,3 @@
 export * from './abis';
-export * from './client';
+export * from '../config/client';
 export * from './useERC20';
